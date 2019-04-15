@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border=1>
+		<thead>
+			<tr bgcolor="#9DC7FF">
+				<td>Area Id</td>
+				<td>Direccion Id</td>
+				<td>Codigo</td>
+				<td>Nombre</td>
+				<td>Sigla</td>
+				<td>Estado</td>
+			</tr>
+		</thead>
+
+		<tr th:each="area : ${areas}">
+			<td th:text=${area.areaid}></td>
+			<td th:text=${area.direccionid}></td>
+			<td th:text=${area.Codigo}></td>
+			<td th:text=${area.Nombre}></td>
+			<td th:text=${area.Sigla}></td>
+			<td th:text=${area.Estado}></td>
+			
+		</tr>
+	
+	</table>
+</body>
+</html>

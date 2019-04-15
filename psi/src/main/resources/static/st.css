@@ -1,0 +1,15 @@
+h3 {
+	font-family: Arial;
+}
+img {
+	width: 20%;
+	max-width: 200px
+}
+ul {
+	font-family:Arial, Helvetica, serif;
+}
+.topnav {
+	margin:0px;
+	padding:0px;
+	background: #9AF0FF;
+}

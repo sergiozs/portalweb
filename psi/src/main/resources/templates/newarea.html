@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" />
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<span th:text="'Direccion N°' + ${dirId}"></span><br>
+	<form method="POST" th:object="${area}" th:action="@{/add-area}">
+		<div><input type="text" th:field="*{Codigo}" placeholder="Codigo"/></div>
+		<div><input type="text" th:field="*{Nombre}" placeholder="Nombre"/></div>
+		<div><input type="text" th:field="*{Sigla}" placeholder="Sigla"/></div>
+        <div>
+        	<label>
+        		<input type="checkbox" th:field="*{Estado}" />Activo
+        	</label>
+        </div>
+		<input type="hidden" th:id="direccionid" th:name="direccionid" th:value=${dirId} />
+		<button type="submit">CREAR AREA</button>
+	</form>
+</body>
+</html>

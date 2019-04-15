@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border=1>
+		<thead>
+			<tr bgcolor="#9DC7FF">
+				<td>ID</td>
+				<td>Codigo</td>
+				<td>Nombre</td>
+				<td>Sigla</td>
+				<td>Estado</td>
+				<td>AREA</td>
+			</tr>
+		</thead>
+
+		<tr th:each="dir : ${dirs}">
+			<td th:text=${dir.direccionid}></td>
+			<td th:text=${dir.Codigo}></td>
+			<td th:text=${dir.Nombre}></td>
+			<td th:text=${dir.Sigla}></td>
+			<td th:text=${dir.Estado}></td>
+			<td >
+				<form action="dir-area">
+					<input type="hidden" th:value=${dir.direccionid} name="id">
+					<button type="submit">VER AREAS</button>
+				</form>
+			</td>
+			<td><a th:href="'/new-area/'+${dir.direccionid}" th:text="'CREAR AREA EN DIRECCION N° ' + ${dir.direccionid}"></a>
+		</tr>
+	
+	</table>
+</body>
+</html>
