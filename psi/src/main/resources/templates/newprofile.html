@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form method="POST" th:object="${perfil}" th:action="@{/add-perfil}">
+		<div><label>Nombre de nuevo perfil:</label></div>
+		<div><input type="text" th:name="nombre" th:id="nombre" placeholder="nombre"/></div>
+		<div><button type="submit">ACEPTAR</button></div>
+	</form>
+</body>
+</html>

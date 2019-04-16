@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class cont {
 	@Autowired private DirRepository dirRep;
-	
 	@Autowired private AreaRepository areaRep;
+	@Autowired private PerfilRepository perfilRep;
 	
 	@GetMapping(path= {"/","/login"})
 	public String init() {
@@ -65,4 +65,15 @@ public class cont {
 		return "redirect:/direcciones";
 	}
 	
+	@GetMapping(path="/newprofile")
+	public String newProfile() {
+		return "newprofile";
+	}
+	
+	@RequestMapping(path="/add-perfil", method=RequestMethod.POST)
+	public String addPerfil(@ModelAttribute Perfil perfil, Model model,BindingResult bindingResult) {
+		perfil.setPerfilid((int)(perfilRep.count()+1));
+		perfilRep.save(perfil);
+		return "test";
+	}
 }
